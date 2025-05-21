@@ -59,4 +59,4 @@ https://github.com/user-attachments/assets/27c5b01e-9002-418f-aa51-d77ebb1e3c55
 
 ---
 
-**This project is part of a coding challenge assigned by a company.**
+**This project was part of a coding challenge.**
