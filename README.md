@@ -44,13 +44,7 @@ This project is a simple Node.js API that reads user data from a CSV file, inser
       "gender": "Male"
     },
     ...
-  ],
-  "ageDistribution": {
-    "below20": 33.33,
-    "20-40": 66.67,
-    "40-60": 0,
-    "above60": 0
-  }
+  ]
 }
 ```
 
