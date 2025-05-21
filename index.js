@@ -23,6 +23,8 @@ db.connect();
 
 // '/analyze-csv' endpoint to read CSV file and insert data into PostgreSQL. This endpoint also fetches the age distribution of users from the database.
 app.get("/analyze-csv", (req, res) => {
+
+    // Read CSV File and convert to JSON
     fs.readFile(CSV_PATH, "utf-8", async (err, data) => {
         if(err){
             console.error("Error Reading CSV File:\n", err);
@@ -31,23 +33,28 @@ app.get("/analyze-csv", (req, res) => {
         else{
             const jsonInfo = csvToJson(data);
             let ageDist = null;
+
+            // Insert data to Postgres Database
             try{
                 for(const user of jsonInfo){
                     await insertData(db, user);
+                }
+                
+                // Upon successfully inserting data, fetch the percentage age distribution.
+                try {
+                    ageDist = await ageDistribution(db);
+                    console.log("Age Distribution:\n", ageDist);
+                }
+                catch (error) {
+                    console.error("Error Fetching Age Distribution:\n", error);
+                    res.status(500).send("Error Fetching Age Distribution");
                 }
             }
             catch(err){
                 console.error("Error Inserting Data:\n", err);
                 res.status(500).send("Error Inserting Data");
             }
-
-            try {
-                ageDist = await ageDistribution(db);
-                console.log("Age Distribution:\n", ageDist);
-            } catch (error) {
-                console.error("Error Fetching Age Distribution:\n", error);
-                res.status(500).send("Error Fetching Age Distribution");
-            }
+            
             res.status(200).json({
                 users: jsonInfo,
             });

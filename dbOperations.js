@@ -25,18 +25,22 @@ export const insertData = async (db, data) => {
 
 export const ageDistribution = async (db) => {
     try{
+        // Fetching the total count of users and the count of users from each age grop.
         const totalAgeCountResult = await db.query(`SELECT COUNT(*) FROM users;`);
         const below20Result = await db.query(`SELECT COUNT(*) FROM users WHERE age < 20;`);
         const above20Result = await db.query(`SELECT COUNT(*) FROM users WHERE age >= 20 AND age < 40;`);
         const above40Result = await db.query(`SELECT COUNT(*) FROM users WHERE age >= 40 AND age < 60;`);
         const above60Result = await db.query(`SELECT COUNT(*) FROM users WHERE age >= 60;`);
         
+        // Calculate the percentage of users in each age group.
+        // If totalAgeCount is 0, set all percentages to 0 to avoid division by zero.
         const totalAgeCount = totalAgeCountResult.rows[0].count;
         const below20 = totalAgeCount ? Number((below20Result.rows[0].count / totalAgeCount * 100).toFixed(2)) : 0;
         const above20 = totalAgeCount ? Number((above20Result.rows[0].count / totalAgeCount * 100).toFixed(2)) : 0;
         const above40 = totalAgeCount ? Number((above40Result.rows[0].count / totalAgeCount * 100).toFixed(2)) : 0;
         const above60 = totalAgeCount ? Number((above60Result.rows[0].count / totalAgeCount * 100).toFixed(2)) : 0;
-
+        
+        // Displaying the age distribuion in the console.
         console.log("Total Age Count:", totalAgeCountResult.rows[0].count);
         console.log("Below 20 Count:", below20Result.rows[0].count);
         console.log("20-40 Count:", above20Result.rows[0].count);
