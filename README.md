@@ -21,14 +21,13 @@ This project is a simple Node.js API that reads user data from a CSV file, inser
    ```
 2. **Set up your `.env` file** with the following variables:
    ```env
-   PORT=3000
    CSV_PATH=./dataset/users.csv
    DB_PWD=your_postgres_password
    ```
 3. **Start PostgreSQL** and make sure your `users` table exists (see `user_table.sql`).
 4. **Run the server**:
    ```bash
-   npm start
+   node index.js
    ```
 5. **Access the API**:
    - Send a GET request to `http://localhost:3000/analyze-csv`
@@ -62,4 +61,4 @@ This project is a simple Node.js API that reads user data from a CSV file, inser
 
 ---
 
-**This project is for educational/demo purposes.**
+**This project is part of a coding challenge assigned by a company.**
