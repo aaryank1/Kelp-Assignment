@@ -31,7 +31,7 @@ This project is a simple Node.js API that reads user data from a CSV file, inser
    ```
 5. **Access the API**:
    - Send a GET request to `http://localhost:3000/analyze-csv` OR use API Clients like Postman or Thunder Client
-   - The API will read the CSV, insert users, and return the users and age distribution as JSON.
+   - The API will read the CSV, insert users, and return the users as JSON and age distribution in the console.
 
 ## Example Response
 ```json
