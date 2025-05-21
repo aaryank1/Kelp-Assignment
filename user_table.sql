@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS users (
+	id SERIAL PRIMARY KEY,
+	name VARCHAR(100) NOT NULL,
+	age INT4 NOT NULL,
+	address JSONB NULL,
+	additional_info JSONB NULL
+);

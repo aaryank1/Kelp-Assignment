@@ -1,0 +1,10 @@
+name.firstName,name.lastName,age,address.line1,address.line2,address.city,address.state,gender
+Aaryan,Kakade,22,XYZ,ABC,Navi Mumbai,Maharashtra,Male
+Mikhil,Angre,21,BCD,WXY,Mumbai,Maharashtra,Male
+Prachi,Thakkar,15,MNO,PQR,Nagpur,Maharashtra,Female
+Noyonika,Mukherjee,31,EFG,HIJ,Pune,Maharashtra,Female
+Raunak,Singh,14,PQR,STU,Chandigarh,Punjab,Male
+Tejas,Koti,26,DEF,GHI,Mumbai,Maharashtra,Male
+Rohit,Prasad,35,A-563 Rakshak Society,New Pune Road,Pune,Maharashtra,Male,
+Ahmed,Parkar,28,,,,,
+Ruchi,Mankar,48,Address Line 1,,,Maharashtra,Female
