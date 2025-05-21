@@ -2,6 +2,10 @@
 
 This project is a simple Node.js API that reads user data from a CSV file, inserts it into a PostgreSQL database, and provides age distribution statistics.
 
+
+https://github.com/user-attachments/assets/27c5b01e-9002-418f-aa51-d77ebb1e3c55
+
+
 ## Features
 - Reads user data from a CSV file (`users.csv`).
 - Converts CSV data to JSON format.
